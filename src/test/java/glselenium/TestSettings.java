@@ -12,7 +12,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class TestSettings {
 
     static WebDriver driver;
-    static String browserToRun;
+    String browserToRun = "chrome";
+    String baseURL = "http://172.22.90.208/litecart";
 
     public static WebDriver setBrowser(String browserToRun) {
         switch (browserToRun){

@@ -1,25 +1,39 @@
+/*
+Task 1: Create Infrastructure
+
+Create account on GitHub
+Install all necessary soft and create empty gradle project
+Create simple test which just open browser, navigates to www.google.com and then close the browser
+Try to run different browsers
+Upload your project on GitHub and send me the link
+ */
+
 package glselenium;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import static glselenium.TestSettings.browserToRun;
-import static glselenium.TestSettings.driver;
 
 
-public class LessonOneGoogleTest {
+public class LessonOneGoogleTest extends TestSettings {
 
-    //or @BeforeClass
     @Before
     public void setupTest() {
-        browserToRun = "ie";
+        //browserToRun = "firefox";
         TestSettings.setBrowser(browserToRun);
     }
 
     @Test
     public void openGoogle(){
         driver.get("http://www.google.com");
-        driver.quit();
     }
+
+    @After
+    public void cleanupTest() {
+        driver.quit();
+        driver = null;
+    }
+
 
 
 /*      Older version
