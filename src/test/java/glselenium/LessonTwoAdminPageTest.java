@@ -1,10 +1,10 @@
 /*
 Task 3: Create scenario which navigates through all sections on Admin page
 
-Login to admin panel http://localhost/litecart/admin
-Sequentially click on each item in side menu (left) including all submenu items
-For each new page verify if header is present on the page (element h1)
-Send me the link to your scenario on GitHub
+1. Login to admin panel http://localhost/litecart/admin
+2. Sequentially click on each item in side menu (left) including all submenu items
+3. For each new page verify if header is present on the page (element h1)
+4. Send me the link to your scenario on GitHub
  */
 
 package glselenium;

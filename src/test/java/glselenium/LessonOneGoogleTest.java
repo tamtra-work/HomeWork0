@@ -1,11 +1,11 @@
 /*
 Task 1: Create Infrastructure
 
-Create account on GitHub
-Install all necessary soft and create empty gradle project
-Create simple test which just open browser, navigates to www.google.com and then close the browser
-Try to run different browsers
-Upload your project on GitHub and send me the link
+1. Create account on GitHub
+2. Install all necessary soft and create empty gradle project
+3. Create simple test which just open browser, navigates to www.google.com and then close the browser
+4. Try to run different browsers
+5. Upload your project on GitHub and send me the link
  */
 
 package glselenium;
