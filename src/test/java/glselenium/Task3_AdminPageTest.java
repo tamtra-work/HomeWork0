@@ -14,15 +14,18 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
-public class LessonTwoAdminPageTest extends TestSettings {
+public class Task3_AdminPageTest extends TestSettings {
 
     @Before
     public void setupTest() {
-        //browserToRun = "firefox";
-        TestSettings.setBrowser(browserToRun);
+        WebDriver driver = getBrowser("");
     }
 
+    //TODO: replace "while" with "for"
+    //TODO: iterate by xpath indexes
+    //TODO: before and after methods - do not copy paste to each test, make smarter
     @Test
     public void CheckHeadersPresenseOnAllSectionsOnAdminPage() {
         driver.get(baseURL + "/admin");

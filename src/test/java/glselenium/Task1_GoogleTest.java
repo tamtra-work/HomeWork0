@@ -13,14 +13,14 @@ package glselenium;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 
 
-public class LessonOneGoogleTest extends TestSettings {
+public class Task1_GoogleTest extends TestSettings {
 
     @Before
     public void setupTest() {
-        //browserToRun = "firefox";
-        TestSettings.setBrowser(browserToRun);
+        WebDriver driver = getBrowser("chr");
     }
 
     @Test
@@ -28,12 +28,13 @@ public class LessonOneGoogleTest extends TestSettings {
         driver.get("http://www.google.com");
     }
 
+
     @After
+
     public void cleanupTest() {
         driver.quit();
         driver = null;
     }
-
 
 
 /*      Older version

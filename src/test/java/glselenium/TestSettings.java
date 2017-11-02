@@ -11,11 +11,11 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestSettings {
 
-    static WebDriver driver;
-    String browserToRun = "chrome";
+    WebDriver driver;
+    //String browserToRun;
     String baseURL = "http://172.22.90.208/litecart";
 
-    public static WebDriver setBrowser(String browserToRun) {
+    public WebDriver getBrowser(String browserToRun) {
         switch (browserToRun){
             case "ie":
                 InternetExplorerDriverManager.getInstance().setup();
@@ -31,8 +31,10 @@ public class TestSettings {
                 ChromeDriverManager.getInstance().setup();
                 driver = new ChromeDriver();
                 break;
-            default: break;         // there should be smth better than that
+            default:
+                getBrowser("firefox");
         }
         return driver;
     }
+
 }

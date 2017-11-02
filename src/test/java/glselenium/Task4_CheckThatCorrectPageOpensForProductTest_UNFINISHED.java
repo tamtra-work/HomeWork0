@@ -23,13 +23,13 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
-public class LessonThreeCheckThatCorrectPageOpensForProduct extends TestSettings {
+public class Task4_CheckThatCorrectPageOpensForProductTest_UNFINISHED extends TestSettings {
 
     @Before
     public void setupTest() {
-        //browserToRun = "firefox";
-        TestSettings.setBrowser(browserToRun);
+        WebDriver driver = getBrowser("");
     }
 
     // NOT FINISHED AND BARELY STARTED
