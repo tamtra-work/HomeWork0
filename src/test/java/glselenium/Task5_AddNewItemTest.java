@@ -41,7 +41,7 @@ public class Task5_AddNewItemTest extends TestSettings {
     public void setupTest() {
         WebDriver driver = getBrowser("");
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(3, TimeUnit.SECONDS);
+        //driver.manage().timeouts().pageLoadTimeout(3, TimeUnit.SECONDS);
     }
 
 
