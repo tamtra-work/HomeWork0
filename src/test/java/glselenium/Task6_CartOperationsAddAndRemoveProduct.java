@@ -33,7 +33,6 @@ public class Task6_CartOperationsAddAndRemoveProduct extends TestSettings {
     public void setupTest() {
         WebDriver driver = getBrowser("");
         driver.manage().window().maximize();
-        //driver.manage().timeouts().pageLoadTimeout(3, TimeUnit.SECONDS);
     }
 
 

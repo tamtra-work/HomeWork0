@@ -10,6 +10,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import java.util.concurrent.TimeUnit;
+
 public class TestSettings {
 
     WebDriver driver;
@@ -38,6 +40,7 @@ public class TestSettings {
             default:
                 getBrowser("firefox");
         }
+        driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
         return driver;
     }
 
