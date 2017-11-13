@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-public class Task7_LinksOpenedInNewWindow extends TestSettings {
+public class Task7_LinksOpenedInNewWindowTest extends TestSettings {
 
     //Copy-paste from slides
     public ExpectedCondition<String> anyWindowOtherThan(Set<String> windows) {

@@ -27,7 +27,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class Task6_CartOperationsAddAndRemoveProduct extends TestSettings {
+public class Task6_CartOperationsAddAndRemoveProductTest extends TestSettings {
 
     @Before
     public void setupTest() {
