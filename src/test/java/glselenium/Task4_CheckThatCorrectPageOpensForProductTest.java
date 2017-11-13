@@ -73,7 +73,7 @@ public class Task4_CheckThatCorrectPageOpensForProductTest extends TestSettings 
 
     @Before
     public void setupTest() {
-        WebDriver driver = getBrowser("ie");
+        WebDriver driver = getBrowser("chrome");
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, 10);
     }
@@ -120,8 +120,6 @@ public class Task4_CheckThatCorrectPageOpensForProductTest extends TestSettings 
         Assert.assertEquals(priceDiscountMainPage_Value, priceDiscountProductPage_Value);
 
         if (driver instanceof FirefoxDriver | driver instanceof InternetExplorerDriver) {
-            Assert.assertEquals("rgba(119, 119, 119, 1)", priceRegularMainPage_Color);
-            Assert.assertEquals("rgba(102, 102, 102, 1)", priceRegularProductPage_Color);
             Assert.assertEquals(priceRegularMainPage_Strike, priceRegularProductPage_Strike);
             Assert.assertEquals(priceDiscountMainPage_Color, priceDiscountProductPage_Color);
             Assert.assertEquals("900", priceDiscountMainPage_Bold);
@@ -131,7 +129,7 @@ public class Task4_CheckThatCorrectPageOpensForProductTest extends TestSettings 
             Assert.assertEquals("rgba(102, 102, 102, 1)", priceRegularProductPage_Color);
             Assert.assertEquals("line-through solid rgb(119, 119, 119)", priceRegularMainPage_Strike);
             Assert.assertEquals("line-through solid rgb(102, 102, 102)", priceRegularProductPage_Strike);
-            Assert.assertEquals("", priceDiscountMainPage_Color, priceDiscountProductPage_Color);
+            Assert.assertEquals(priceDiscountMainPage_Color, priceDiscountProductPage_Color);
             Assert.assertEquals(priceDiscountMainPage_Bold, priceDiscountProductPage_Bold);
         } else {
             System.out.println("Your browser is not supported");
