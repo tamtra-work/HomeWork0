@@ -33,14 +33,14 @@ public class TestSettings {
                 driver = new FirefoxDriver(capabilities);
                 break;
             case "chrome":
-                capabilities.setCapability(CapabilityType.PAGE_LOAD_STRATEGY, "eager");
+                //capabilities.setCapability(CapabilityType.PAGE_LOAD_STRATEGY, "eager");
                 ChromeDriverManager.getInstance().setup();
                 driver = new ChromeDriver(capabilities);
                 break;
             default:
                 getBrowser("firefox");
         }
-        driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         return driver;
     }
 
