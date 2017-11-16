@@ -1,6 +1,7 @@
 package glselenium.task9;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -11,15 +12,20 @@ public class ProductPage extends BasePage {
     String addCartProductButtonCSS = "button[type='submit'][name='add_cart_product']";
     String defaultDuckSize = "Medium";
 
+    WebElement addCartProductButton;
+    Select sizeDropdown;
+
     int quantityCartBeforeAdding;
 
-    WebElement addCartProductButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(addCartProductButtonCSS)));
-    Select sizeDropdown;
+    public ProductPage(WebDriver driver){
+        super(driver);
+    }
 
     public void addDuckToCart() {
         //Add product to cart and wait until counter of the items in the cart changes
         quantityCartBeforeAdding = getQuantityCart();
         setDuckSize();
+        addCartProductButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(addCartProductButtonCSS)));
         addCartProductButton.click();
         wait.until(ExpectedConditions.textToBePresentInElementLocated(By.cssSelector(quantityCartCSS), String.valueOf(quantityCartBeforeAdding + 1)));
     }

@@ -10,47 +10,51 @@ package glselenium.task9;
 
 import glselenium.TestSettings;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class Task9_MultiLayeredTest extends TestSettings {
 
-    HomePage homePage = new HomePage();
-    ProductPage productPage = new ProductPage();
-    CheckoutPage checkoutPage = new CheckoutPage();
+    WebDriver driver;
+    WebDriverWait wait;
 
+    HomePage homePage;
+    ProductPage productPage;
+    CheckoutPage checkoutPage;
 
     @Before
     public void setupTest() {
-        WebDriver driver = getBrowser("chrome");
-        driver.manage().window().maximize();
+        driver = getBrowser("chrome");
+        wait = new WebDriverWait(driver, 10);
+
+        homePage = new HomePage(driver);
+        productPage = new ProductPage(driver);
+        checkoutPage = new CheckoutPage(driver);
     }
 
-
-    //TODO: test fails if the same duck is added twice or more, fix it
     @Test
     public void test6_CartOperationsAddAndRemoveProduct() {
 
         for (int i = 0; i < 3; i++) {
-            homePage.goToHome(driver);
+            homePage.goToHome();
             homePage.openFirstPopularDuck();
             productPage.addDuckToCart();
         }
 
         checkoutPage.goToCheckout();
         checkoutPage.deleteAllItemsCart();
-        checkoutPage.verifyCartEmpty();
-
+        homePage.goToHome();
+        
+        Assert.assertEquals(0, homePage.getQuantityCart());
     }
 
     @After
     public void cleanupTest() {
-
         driver.quit();
         driver = null;
     }
-
-
 }

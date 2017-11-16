@@ -19,7 +19,6 @@ public class TestSettings {
     private DesiredCapabilities capabilities = new DesiredCapabilities(); //TODO: Desired capabilities - check to which browsers they are applicable - ?
 
     public String baseURL = "http://172.22.90.208/litecart";
-    public WebDriverWait wait;// = new WebDriverWait(driver, 10);
 
     public WebDriver getBrowser(String browserToRun) {
         switch (browserToRun){
@@ -43,8 +42,7 @@ public class TestSettings {
                 getBrowser("firefox");
         }
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, 10);
+        driver.manage().window().maximize();
         return driver;
     }
-
 }
