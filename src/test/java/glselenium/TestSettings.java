@@ -9,15 +9,17 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
 public class TestSettings {
 
-    WebDriver driver;
-    DesiredCapabilities capabilities = new DesiredCapabilities(); //TODO: Desired capabilities - check to which browsers they are applicable - ?
+    public WebDriver driver;
+    private DesiredCapabilities capabilities = new DesiredCapabilities(); //TODO: Desired capabilities - check to which browsers they are applicable - ?
 
-    String baseURL = "http://172.22.90.208/litecart";
+    public String baseURL = "http://172.22.90.208/litecart";
+    public WebDriverWait wait;// = new WebDriverWait(driver, 10);
 
     public WebDriver getBrowser(String browserToRun) {
         switch (browserToRun){
@@ -41,6 +43,7 @@ public class TestSettings {
                 getBrowser("firefox");
         }
         driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver, 10);
         return driver;
     }
 
